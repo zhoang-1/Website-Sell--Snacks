@@ -2,6 +2,7 @@ import HomeScreen from "./screens/home/HomeScreen";
 import { BrowserRouter, Routes, Route, useLocation, matchPath } from "react-router-dom";
 import Header from "./screens/header/Header";
 import "./App.css";
+import Friends from "./pages/Friends";
 
 function App() {
   const MainLayout = ({ children }) => {
@@ -37,6 +38,7 @@ function App() {
     <MainLayout>
       <Routes>
         <Route element={<HomeScreen />} path="/" />
+        <Route element={<Friends />} path="/friend" />
       </Routes>
     </MainLayout>
     </BrowserRouter>
