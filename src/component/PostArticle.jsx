@@ -16,7 +16,7 @@ const Content = () => {
       );
       setpost(res.data);
      }
-     postArticle()
+     postArticle();
       // console.log(post)
   },[])
   return (

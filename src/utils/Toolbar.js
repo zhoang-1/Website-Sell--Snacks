@@ -1,27 +1,20 @@
-import { MdHome, MdGroups } from "react-icons/md";
-import { FaUserFriends, FaUserCircle   } from "react-icons/fa";
-import { IoMdNotifications } from "react-icons/io";
 export const Toolbar = [
     {
         name: 'Home',
-        icon: <MdHome />,
+        icon: 'fa fa-home',
         link: '/'
     },{
         name: 'friend',
-        icon: <FaUserFriends />,
-        link: 'friend'
+        icon: 'fa fa-user-friends',
+        link: '/friend'
     },{
-        name: 'Group',
-        icon: <MdGroups />,
-        link: 'group'
+        name:'circle',
+        icon:'fa fa-play-circle',
+        link: '/circle'
     },{
-        name:'individual',
-        icon:<FaUserCircle  />,
-        link: 'user'
-    },{
-        name: 'Notification',
-        icon:<IoMdNotifications />,
-        link: 'notification'
+        name: 'user',
+        icon:'fa fa-users',
+        link: '/user'
     }
 ]
 // export const right_toolbar = [
