@@ -5,3 +5,10 @@
 .bodys{
   width: 100%;
 }
+.container{
+  background:#eee;
+  display:flex;
+  width: 100%;
+  justify-content: space-between;
+  
+}

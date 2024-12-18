@@ -1,8 +1,10 @@
 import HomeScreen from "./screens/home/HomeScreen";
 import { BrowserRouter, Routes, Route, useLocation, matchPath } from "react-router-dom";
 import Header from "./screens/header/Header";
+import Search from "./pages/searchSocical/Search";
 import "./App.css";
 import Friends from "./pages/Friends";
+import SidebarLeft from "./screens/home/SidebarLeft";
 
 function App() {
   const MainLayout = ({ children }) => {
@@ -26,7 +28,7 @@ function App() {
 
     //nếu không thì trả về children xài cùng header và footer
     return (
-      <div className="bodys">
+      <div className="">
         <Header />
         {children}
       </div>
@@ -39,6 +41,7 @@ function App() {
       <Routes>
         <Route element={<HomeScreen />} path="/" />
         <Route element={<Friends />} path="/friend" />
+        <Route path="/search/:keySearch" element={<Search />} />
       </Routes>
     </MainLayout>
     </BrowserRouter>
