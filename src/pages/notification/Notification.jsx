@@ -1,9 +1,9 @@
 import React from "react";
-import { Notifications } from "../utils/notification";
+import { Notifications } from "../../utils/notification";
 import { Link } from "react-router-dom";
 const Notification = () => {
   return (
-    <div className="">
+    <div className="background w-full  h-[calc(100vh_-_70px)]">
       <div className="text-[26px] font-medium pb-4 px-4">Notification</div>
       <div className="px-6 h-[30px]">
         {Notifications.map((main, i) => (

@@ -1,36 +1,48 @@
 import React, { useState, useEffect, useRef } from "react";
 import Facebook_Logo from "../../assest/image/Facebook_Logo.png.webp";
+import Modal from "../../component/Modal"; // Import Modal Component
 import { useNavigate } from "react-router-dom";
 
-const Avatar = () => {
+const Avatar = ({ onLogout }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null); // Tham chiếu đến menu thả xuống
-  const navigate = useNavigate(); // Hook để điều hướng
+  const [isModalOpen, setIsModalOpen] = useState(false); // Quản lý trạng thái modal
+  const menuRef = useRef(null);
+  const navigate = useNavigate();
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   const handleAddAccount = () => {
-    setIsMenuOpen(false); // Đóng menu
-    navigate("/my-account"); // Chuyển hướng đến đường dẫn thêm tài khoản
+    setIsMenuOpen(false);
+    navigate("/my-account");
   };
-  const handleLogout = () => {
+
+  const handleLogoutClick = () => {
+    setIsModalOpen(true); // Hiển thị modal khi nhấn Đăng xuất
     setIsMenuOpen(false); // Đóng menu
-    navigate("/logout");
+  };
+
+  const confirmLogout = () => {
+    setIsModalOpen(false); // Đóng modal
+    onLogout(); // Gọi hàm đăng xuất từ props
+    navigate("/login");
+  };
+
+  const cancelLogout = () => {
+    setIsModalOpen(false); // Đóng modal
   };
 
   const handleClickOutside = (event) => {
     if (menuRef.current && !menuRef.current.contains(event.target)) {
-      setIsMenuOpen(false); // Đóng menu nếu nhấp ra ngoài
+      setIsMenuOpen(false);
     }
   };
 
   useEffect(() => {
-    // Thêm trình lắng nghe sự kiện khi menu mở
     if (isMenuOpen) {
       document.addEventListener("mousedown", handleClickOutside);
     }
-    // Xóa trình lắng nghe sự kiện khi menu đóng
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
@@ -43,10 +55,8 @@ const Avatar = () => {
         onClick={toggleMenu}
         style={{
           backgroundImage: `url(${Facebook_Logo})`,
-          // backgroundImage: `url(${props.profile_picture})`,
         }}
       ></span>
-      {/* Menu thả xuống */}
       {isMenuOpen && (
         <div
           ref={menuRef}
@@ -59,12 +69,20 @@ const Avatar = () => {
             Trang cá nhân
           </button>
           <button
-            onClick={handleLogout}
+            onClick={handleLogoutClick} // Gọi hàm để mở modal
             className="w-full text-left px-4 py-2 hover:bg-gray-100"
           >
             Đăng xuất
           </button>
         </div>
+      )}
+      {isModalOpen && (
+        <Modal
+          title="Xác nhận đăng xuất"
+          message="Bạn có chắc chắn muốn đăng xuất không?"
+          onConfirm={confirmLogout} // Xác nhận đăng xuất
+          onCancel={cancelLogout} // Hủy đăng xuất
+        />
       )}
     </div>
   );

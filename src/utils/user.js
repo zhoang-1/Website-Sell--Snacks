@@ -1,21 +1,32 @@
 import Image from "../assest/image/black-image.avif"
 
-export const User = [
-    {
-        myProfile : 'Nguyen Van A',
-        imageProfile: Image,
-    },
-    {
-        myProfile : 'Nguyen Van B',
-        imageProfile: Image,
-    },{
-        myProfile : 'Nguyen Van C',
-        imageProfile: Image,
-    },{
-        myProfile : 'Nguyen Van D',
-        imageProfile: Image,
-    },{
-        myProfile : 'Nguyen Van E',
-        imageProfile: Image,
-    },
-]
+export const AllFriend = [
+    { avatar: 'path_to_image1.jpg', name: 'Huy Hoàng', commonFriends: 44, friendStatus: 'friends', link: 'myfriend' },
+    { avatar: 'path_to_image1.jpg', name: 'Huy Hoàng', commonFriends: 44, friendStatus: 'friends', link: 'myfriend' },
+    { avatar: 'path_to_image1.jpg', name: 'Huy Hoàng', commonFriends: 44, friendStatus: 'friends', link: 'myfriend' },
+    { avatar: 'path_to_image1.jpg', name: 'Hoàng Huy', commonFriends: 44, friendStatus: 'friends', link: 'myfriend' },
+    { avatar: 'path_to_image2.jpg', name: 'Nguyễn An', commonFriends: 30, friendStatus: 'pending' },
+    { avatar: 'path_to_image3.jpg', name: 'Trần Bình', commonFriends: 20, friendStatus: 'unblock' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy Hoàng', commonFriends: 23, friendStatus: 'not_friends' },
+    { avatar: 'path_to_image4.jpg', name: 'Nguyễn Huy', commonFriends: 23, friendStatus: 'not_friends' },
+    // Thêm các bạn khác ở đây
+];

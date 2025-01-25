@@ -7,7 +7,7 @@ import Facebook_Logo from "../../assest/image/Facebook_Logo.png.webp";
 import "./header.css";
 import Avatar from "./Avatar";
 
-const Header = () => {
+const Header = ({onLogout}) => {
   // use tooltip
   const LinkActive = ({ isActive }) => {
     return {
@@ -39,14 +39,14 @@ const Header = () => {
       </ul>
 
       <div className="nav-right">
+        <div to="/message" className="message">
+        <i class="fa-solid fa-plus"></i>
+        </div>
         <Link to="/notification" className="notificare">
           <i className="fa fa-bell text-lg"></i>
         </Link>
 
-        <Link to="/message" className="message">
-          <i className="fas fa-ellipsis-h text-lg"></i>
-        </Link>
-        <Avatar />
+        <Avatar onLogout={onLogout}/>
       </div>
     </nav>
   );
