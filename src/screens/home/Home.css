@@ -1,6 +1,4 @@
-
-
- .left-panel{
+.left-panel{
     position: sticky;
     top:70px;
     width:250px;
@@ -17,7 +15,7 @@
     padding:10px 0px;
 }
 
-.left-panel ul li{
+.left-panel ul li a{
     list-style: none;
     display: flex;
     padding:.7rem 1rem;
@@ -31,27 +29,27 @@
     background:#ddd;
 }
 
-.left-panel ul li > p{
+.left-panel ul li a > p{
     margin-left: 10px;
 }
 
- .left-panel ul li > i{
+ .left-panel ul li a > i{
     font-size:20px;
     color:slateblue;
 }
 
- .left-panel ul li > i.fa-calendar-week{
+ .left-panel ul li a> i.fa-calendar-week{
     color:tomato;
 }
 
- .left-panel ul li i.fa-briefcase{
+ .left-panel ul li a i.fa-briefcase{
     color:green;
 }
- .left-panel ul li i.fa-star{
+ .left-panel ul li a i.fa-star{
     color:yellowgreen;
 }
 
- .left-panel ul li i.fa-hands-helping{
+ .left-panel ul li a i.fa-hands-helping{
     color:indianred;
 }
 
@@ -173,7 +171,7 @@
 .post .post-bottom{
     box-shadow: 1px solid #ddd;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding:5px 5px 0px 5px;
 }
 
@@ -183,6 +181,9 @@
     transition: .3s ease-in;
     cursor: pointer;
 }
+.post .post-bottom .action > i{
+    padding-right: 10px;
+}
 
 .post .post-bottom .action:hover{
     background:#eee;
@@ -190,6 +191,7 @@
 
 .post.create .post-bottom > .action{
     color:#d74;
+    padding-right: 13px;
 }
 
 .container .right-panel{

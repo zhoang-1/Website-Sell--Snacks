@@ -4,11 +4,16 @@
 }
 .bodys{
   width: 100%;
+  background-color: #eee;
 }
 .container{
   background:#eee;
   display:flex;
   width: 100%;
+  height: 100%;
   justify-content: space-between;
   
+}
+.background{
+  background: #eee;
 }

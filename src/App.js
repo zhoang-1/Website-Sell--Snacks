@@ -1,49 +1,62 @@
+import React from "react";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import HomeScreen from "./screens/home/HomeScreen";
-import { BrowserRouter, Routes, Route, useLocation, matchPath } from "react-router-dom";
 import Header from "./screens/header/Header";
 import Search from "./pages/searchSocical/Search";
+import Friends from "./pages/friends/FriendShip";
+
+import NotFound from "./pages/notfound/NotFound";
 import "./App.css";
-import Friends from "./pages/Friends";
-import SidebarLeft from "./screens/home/SidebarLeft";
+import Login from "./pages/auth/Login";
+import Register from "./pages/auth/Register";
+import ForgotPassword from "./pages/auth/ForgotPassword";
 
 function App() {
   const MainLayout = ({ children }) => {
-
-    //url path của trang web
     const location = useLocation();
 
-    //khai báo url path không xài header footer
-    const excludeRoutes = ['/products/:id'];
+    // Khai báo các route không cần header (ví dụ: sản phẩm, không cần header và footer)
+    const excludeRoutes = ["/login", "/signup", "/forgot-password"];
 
-    // kiểm tra bằng vòng lặp
-    const isExist = excludeRoutes.some((routes) => {
-      // trả về liệu có tồn tại location nào khớp với phần tử url nào trong excludeRoutes hay không
-      return matchPath({path: routes, exact: true}, location.pathname)
-    })
+    // Kiểm tra xem route hiện tại có thuộc loại cần bỏ qua header/footer không
+    const isExist = excludeRoutes.includes(location.pathname);
 
-    // nếu có thì trả về children không xài header và footer
+    // Nếu có, chỉ render children mà không có header
     if (isExist) {
       return <>{children}</>;
     }
 
-    //nếu không thì trả về children xài cùng header và footer
+    // Nếu không có yêu cầu đặc biệt, render children với header
     return (
       <div className="">
-        <Header />
+        <Header /> 
         {children}
       </div>
     );
+  };
 
-  }
   return (
     <BrowserRouter>
-    <MainLayout>
-      <Routes>
-        <Route element={<HomeScreen />} path="/" />
-        <Route element={<Friends />} path="/friend" />
-        <Route path="/search/:keySearch" element={<Search />} />
-      </Routes>
-    </MainLayout>
+      <MainLayout>
+        <Routes>
+          {/* Trang Home không yêu cầu bảo vệ, luôn có Header */}
+          <Route path="/" element={<HomeScreen />} />
+          <Route path="/search" element={<Search />} />
+          <Route path="/friends" element={<Friends />} />
+          <Route path="/notification" element ={<div>Notification</div>} />
+          <Route path="/friend-ships" element={<Friends />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Register />} />
+          <Route path="/search/:keySearch" element={<Search />} />
+          <Route path="/forgot-password" element={<ForgotPassword/>} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </MainLayout>
     </BrowserRouter>
   );
 }
